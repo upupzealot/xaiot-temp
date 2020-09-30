@@ -1,36 +1,49 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">
-        Home
-      </router-link> |
-      <router-link to="/about">
-        About
-      </router-link>
-    </div>
-    <router-view />
-  </div>
+  <el-container>
+    <el-header>
+      <Nav />
+    </el-header>
+
+    <el-main class="main-box">
+      <Sidebar />
+
+      <router-view />
+    </el-main>
+  </el-container>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+body {
+  margin: 0;
+  font-family: 'PingFang SC', "Helvetica Neue", Helvetica,
+    "microsoft yahei", arial, STHeiTi, sans-serif;
+}
+.page-box .grid-card {
+  margin-top: 15px;
 }
 
-#nav {
-  padding: 30px;
+.el-main.main-box {
+  position: absolute;
+  top: 60px;
+  left: 180px;
+  right: 0;
+  bottom: 0;
+  overflow: scroll;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+/* 隐藏滚动条槽位 */
+.el-main.main-box::-webkit-scrollbar {
+  width: 0;
 }
 </style>
+
+<script>
+import Nav from '@/components-shared/nav.vue';
+import Sidebar from '@/components-shared/sidebar.vue';
+
+export default {
+  components: {
+    Nav,
+    Sidebar,
+  },
+};
+</script>

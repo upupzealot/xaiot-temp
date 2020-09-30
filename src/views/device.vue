@@ -6,7 +6,9 @@
     <el-col>
       <Breadcrumb
         :breadcrumbs="[{
-          label: '仪表盘',
+          label: '设备管理',
+        }, {
+          label: 'xx 设备',
         }]"
       />
     </el-col>
