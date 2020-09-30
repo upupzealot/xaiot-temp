@@ -25,7 +25,7 @@ body {
 .el-main.main-box {
   position: absolute;
   top: 60px;
-  left: 180px;
+  left: 200px;
   right: 0;
   bottom: 0;
   overflow: scroll;
