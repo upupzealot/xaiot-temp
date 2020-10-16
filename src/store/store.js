@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
+import API from '@/components-shared/api';
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -24,10 +26,12 @@ export default new Vuex.Store({
         avatar: '',
         ...user,
       });
+      API.setJwt(jwt);
     },
     logout(ctx) {
       ctx.commit('setJwt', '');
       ctx.commit('setUser', {});
+      API.setJwt('');
     },
   },
   modules: {

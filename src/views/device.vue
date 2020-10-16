@@ -12,15 +12,49 @@
         }]"
       />
     </el-col>
+    <el-col>
+      <el-card class="grid-card">
+        <TTable
+          :fields="fields"
+          :model="deviceModel"
+        />
+      </el-card>
+    </el-col>
   </el-row>
 </template>
 
 <script>
 import Breadcrumb from '@/components-shared/breadcrumb.vue';
 
+import TTable from '@/components-shared/table.vue';
+import DataModel from '@/components-shared/data-model';
+
 export default {
   components: {
     Breadcrumb,
+    TTable,
+  },
+  data() {
+    const deviceModel = new DataModel({
+      createApi: 'http://47.114.145.81:3000/mock/41/api/device',
+      getListApi: 'http://47.114.145.81:3000/mock/41/api/device',
+      updateApi: 'http://47.114.145.81:3000/mock/41/api/device',
+      deleteApi: 'http://47.114.145.81:3000/mock/41/api/device',
+    });
+
+    return {
+      fields: [{
+        label: 'ID',
+        prop: 'id',
+      }, {
+        label: '设备名称',
+        prop: 'name',
+      }, {
+        label: '设备负责人',
+        prop: 'owner',
+      }],
+      deviceModel,
+    };
   },
 };
 </script>
