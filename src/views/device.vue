@@ -38,14 +38,15 @@ export default {
     const deviceModel = new DataModel({
       createApi: 'http://47.114.145.81:3000/mock/41/api/device',
       getListApi: 'http://47.114.145.81:3000/mock/41/api/device',
-      updateApi: 'http://47.114.145.81:3000/mock/41/api/device',
-      deleteApi: 'http://47.114.145.81:3000/mock/41/api/device',
+      updateApi: 'http://47.114.145.81:3000/mock/41/api/device/:id',
+      deleteApi: 'http://47.114.145.81:3000/mock/41/api/device/:id',
     });
 
     return {
       fields: [{
         label: 'ID',
         prop: 'id',
+        width: '80px',
       }, {
         label: '设备名称',
         prop: 'name',
