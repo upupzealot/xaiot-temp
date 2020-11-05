@@ -4,6 +4,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 import API from '@/components-shared/api';
 import LoginState from '@/components-shared/login-state';
+import FormRender from '@/components-shared/form-render.vue';
 import App from './app.vue';
 import router from './router';
 import store from './store/store';
@@ -13,6 +14,7 @@ Vue.use(ElementUI);
 Vue.config.productionTip = false;
 
 Vue.prototype.$api = new API(Vue);
+Vue.component('FormRender', FormRender);
 
 // 验证用户当前登录态
 const loginState = new LoginState(router, store, Vue);

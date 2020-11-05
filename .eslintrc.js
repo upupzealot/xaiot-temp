@@ -17,4 +17,8 @@ module.exports = {
     'arrow-parens': ['error', 'as-needed'],
     'global-require': 0,
   },
+  ignorePatterns: [
+    '/src/components-shared/form-render.vue',
+    '/src/components-shared/form-items',
+  ],
 };

@@ -1,0 +1,212 @@
+{
+  "formConf": {
+    "labelWidth": "80px",
+    "labelPosition": "right",
+    "gutter": 20
+  },
+  "fieldList": [
+    {
+      "name": "profile",
+      "type": "subform",
+      "label": "子表单",
+      "formKey": "profile",
+      "formConf": {
+        "labelWidth": "80px",
+        "labelPosition": "right",
+        "gutter": 20
+      },
+      "fieldList": [
+        {
+          "name": "rule_model_id",
+          "type": "input",
+          "label": "模型编号",
+          "required": true
+        }
+      ],
+      "validRules": {}
+    },
+    {
+      "name": "properties",
+      "type": "item-list",
+      "label": "属性",
+      "formKey": "properties",
+      "formConf": {
+        "labelWidth": "80px",
+        "labelPosition": "right",
+        "gutter": 20
+      },
+      "fieldList": [
+        {
+          "name": "identifier",
+          "type": "input",
+          "label": "属性 ID"
+        },
+        {
+          "name": "name",
+          "type": "input",
+          "label": "属性名称"
+        },
+        {
+          "name": "accessMode",
+          "type": "radio",
+          "label": "读写类型",
+          "options": [
+            {
+              "label": "只读",
+              "value": "r"
+            },
+            {
+              "label": "读写",
+              "value": "rw"
+            }
+          ]
+        },
+        {
+          "name": "required",
+          "type": "switch",
+          "label": "是否必选",
+          "activeText": "是",
+          "inactiveText": "否"
+        },
+        {
+          "name": "dataType",
+          "type": "subform",
+          "label": "子表单",
+          "formKey": "dataType",
+          "formConf": {
+            "labelWidth": "80px",
+            "labelPosition": "right",
+            "gutter": 20
+          },
+          "fieldList": [
+            {
+              "name": "type",
+              "type": "select",
+              "label": "下拉选项",
+              "options": [
+                {
+                  "label": "整数",
+                  "value": "int"
+                },
+                {
+                  "label": "浮点数",
+                  "value": "float"
+                },
+                {
+                  "label": "文本",
+                  "value": "text"
+                },
+                {
+                  "label": "布尔",
+                  "value": "bool"
+                }
+              ],
+              "required": true
+            },
+            {
+              "name": "specs",
+              "type": "subform",
+              "label": "子表单",
+              "formKey": "specs",
+              "formConf": {
+                "labelWidth": "80px",
+                "labelPosition": "right",
+                "gutter": 20
+              },
+              "fieldList": [
+                {
+                  "name": "min",
+                  "type": "input",
+                  "label": "最小值",
+                  "span": 12,
+                  "effect": "watch('../type', val => {\n  set('enabled', val === 'int' || val === 'float');\n});\n",
+                  "enabled": false
+                },
+                {
+                  "name": "max",
+                  "type": "input",
+                  "label": " 最大值",
+                  "span": 12,
+                  "effect": "watch('../type', val => {\n  set('enabled', val === 'int' || val === 'float');\n});\n",
+                  "enabled": false
+                },
+                {
+                  "name": "unit",
+                  "type": "input",
+                  "label": "单位",
+                  "span": 12,
+                  "effect": "watch('../type', val => {\n  set('enabled', val === 'int' || val === 'float');\n});\n",
+                  "enabled": false
+                },
+                {
+                  "name": "unitName",
+                  "type": "input",
+                  "label": "单位名称",
+                  "span": 12,
+                  "effect": "watch('../type', val => {\n  set('enabled', val === 'int' || val === 'float');\n});\n",
+                  "enabled": false
+                },
+                {
+                  "name": "length",
+                  "type": "input",
+                  "label": "最大长度",
+                  "effect": "watch('../type', val => {\n  set('enabled', val === 'text');\n});\n",
+                  "enabled": false
+                },
+                {
+                  "name": "1",
+                  "type": "input",
+                  "label": "真值标签",
+                  "span": 12,
+                  "effect": "watch('../type', val => {\n  set('enabled', val === 'bool');\n});\n",
+                  "enabled": false
+                },
+                {
+                  "name": "0",
+                  "type": "input",
+                  "label": "假值标签",
+                  "span": 12,
+                  "effect": "watch('../type', val => {\n  set('enabled', val === 'bool');\n});\n",
+                  "enabled": false
+                }
+              ],
+              "validRules": {}
+            }
+          ],
+          "validRules": {}
+        }
+      ],
+      "validRules": {}
+    },
+    {
+      "name": "events",
+      "type": "item-list",
+      "label": "事件 ID",
+      "formKey": "events",
+      "formConf": {
+        "labelWidth": "80px",
+        "labelPosition": "right",
+        "gutter": 20
+      },
+      "fieldList": [
+        {
+          "name": "identifier",
+          "type": "input",
+          "label": "事件 ID"
+        },
+        {
+          "name": "name",
+          "type": "input",
+          "label": "事件名称"
+        },
+        {
+          "name": "desc",
+          "type": "input",
+          "label": "事件描述"
+        }
+      ],
+      "validRules": {}
+    }
+  ],
+  "validRules": {}
+}

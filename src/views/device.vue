@@ -20,6 +20,11 @@
         />
       </el-card>
     </el-col>
+    <el-col :span="12">
+      <el-card class="grid-card">
+        <FormRender :schema="schema" />
+      </el-card>
+    </el-col>
   </el-row>
 </template>
 
@@ -28,6 +33,8 @@ import Breadcrumb from '@/components-shared/breadcrumb.vue';
 
 import TTable from '@/components-shared/table.vue';
 import DataModel from '@/components-shared/data-model';
+
+import schema from './device-model.json';
 
 export default {
   components: {
@@ -55,6 +62,7 @@ export default {
         prop: 'owner',
       }],
       deviceModel,
+      schema,
     };
   },
 };
